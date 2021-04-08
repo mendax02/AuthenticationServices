@@ -40,7 +40,7 @@ namespace JwtAuthentication.API.Services
 
         public bool IsUserExist(string username) => _users.Any(u => u.Key == username);
 
-        public bool VerifyPassword(string username, string password) => _users[username].Password == EncryptPassword(password);
+        public bool VerifyPassword(string username, string password) => _users[username].Password.Equals(EncryptPassword(password), StringComparison.CurrentCultureIgnoreCase);
 
         public dynamic GenerateToken(string username)
         {

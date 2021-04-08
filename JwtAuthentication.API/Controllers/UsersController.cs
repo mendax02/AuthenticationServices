@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Threading.Tasks;
 
 namespace JwtAuthentication.API.Controllers
 {
@@ -18,7 +17,7 @@ namespace JwtAuthentication.API.Controllers
 
         [HttpGet]
         [Authorize]
-        public async Task<string> Get()
+        public string Get()
         {
             _logger.LogInformation("Authenticated");
             return "Hello World!";
@@ -26,7 +25,7 @@ namespace JwtAuthentication.API.Controllers
 
         [HttpGet("GetInfo")]
         [AllowAnonymous]
-        public async Task<string> GetInfo()
+        public string GetInfo()
         {
             return "Anyone can access this endpoint!";
         }
