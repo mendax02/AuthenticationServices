@@ -21,7 +21,7 @@ namespace JwtAuthentication.API.Controllers
         public IActionResult Create([FromBody] User user)
         {
             if (!_authService.Authenticate(user.Username, user.Password))
-                return BadRequest();
+                return Unauthorized();
             else
                 return new ObjectResult(_authService.GenerateToken(user.Username));
         }
