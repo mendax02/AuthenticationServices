@@ -1,12 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Users.WebApi.Data;
 
 namespace Users.WebApi
@@ -33,7 +27,6 @@ namespace Users.WebApi
             var services = scope.ServiceProvider;
             var context = services.GetRequiredService<UsersWebApiContext>();
             UsersContextSeed.SeedAsync(context);
-
         }
 
     }
