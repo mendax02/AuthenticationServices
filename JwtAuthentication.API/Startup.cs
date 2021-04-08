@@ -44,7 +44,7 @@ namespace JwtAuthentication.API
                         ValidateIssuer = false,
                         ValidateAudience = false,
                         ValidateLifetime = true,
-                        ClockSkew = TimeSpan.FromMinutes(5)
+                        ClockSkew = TimeSpan.FromSeconds(300)
                     };
                 });
         }

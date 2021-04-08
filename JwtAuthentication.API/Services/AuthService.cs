@@ -49,8 +49,7 @@ namespace JwtAuthentication.API.Services
                new Claim(ClaimTypes.Name, username),
                new Claim(ClaimTypes.NameIdentifier,_users[username].Id.ToString()),
                new Claim(JwtRegisteredClaimNames.Nbf, new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds().ToString()),
-               new Claim(JwtRegisteredClaimNames.Exp, new DateTimeOffset(DateTime.Now.AddHours(Convert.ToInt32( _configuration.GetSection("JwtConfig:ExpiryTime").Value))).ToUnixTimeSeconds().ToString())
-
+               new Claim(JwtRegisteredClaimNames.Exp, new DateTimeOffset(DateTime.Now.AddSeconds(Convert.ToInt32( _configuration.GetSection("JwtConfig:ExpiryTimeInSeconds").Value))).ToUnixTimeSeconds().ToString())
             };
 
             var token = new JwtSecurityToken(
