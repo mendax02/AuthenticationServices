@@ -23,3 +23,4 @@ Process to Run **JWT Authentication Token**
 6) Now, Make a GET request to "https://localhost:5001/api/Users" 
 7) User should be able to fetch the result from the endpoint
 8) If token is not passed then service should return 401 response code
+https://documenter.getpostman.com/view/7377221/TzCTa5SQ
